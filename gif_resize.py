@@ -20,8 +20,6 @@ def resize_gif(input_path, output_path, scale):
             append_images=frames[1:],
             loop=img.info['loop'],
             duration=img.info['duration'],
-            optimize=True,
-            quality=1
         )
 
 
