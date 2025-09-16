@@ -2,8 +2,8 @@
 
 /* Modern Design System */
 :root {
-    --primary-blue: #3b82f6;
-    --primary-blue-hover: #2563eb;
+    --primary-blue: #aa9100bd;
+    --primary-blue-hover: #c8ad00;
     --success-green: #10b981;
     --success-green-hover: #059669;
     --info-cyan: #06b6d4;
@@ -13,7 +13,7 @@
     --text-dark: #1f2937;
     --text-gray: #6b7280;
     --text-light: #9ca3af;
-    --bg-white: #cfe7e6;
+    --bg-white: #bdd6e3;
     --bg-gray-50: #f9f9fa;
     --bg-gray-100: #f3f4f6;
     --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
@@ -126,6 +126,7 @@ body {
 /* Section Styling */
 section {
     padding: 4rem 0;
+    background-color: var(--bg-gray-50);
 }
 
 section:nth-child(even) {
