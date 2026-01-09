@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+
+  <meta name="description" content="An intuitive explanation of three major RL algorithms: PPO, SAC, and TD3.">
+  <meta property="og:title" content="Understanding PPO, SAC, and TD3 in Reinforcement Learning"/>
+  <meta property="og:description" content="A simple yet deep explanation of modern RL algorithms widely used in robotics: PPO, SAC, and TD3."/>
+  <meta property="og:url" content="URL_OF_THIS_POST"/>
+  <meta property="og:image" content="static/images/your_banner_image.png" />
+
+  <meta name="twitter:title" content="PPO, SAC, TD3 Explained">
+  <meta name="twitter:description" content="A clean, intuitive explanation of three core RL algorithms.">
+  <meta name="twitter:image" content="static/images/your_twitter_banner_image.png">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <meta name="keywords" content="Reinforcement Learning, PPO, SAC, TD3, Actor-Critic, Robotics">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Understanding PPO, SAC, and TD3</title>
+
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+</head>
+
+<body>
+
+<!-- Title Section -->
+<section class="hero is-light">
+  <div class="hero-body">
+    <div class="container is-max-desktop has-text-centered">
+      <h1 class="title is-1">PPO, SAC, and TD3 in Reinforcement Learning</h1>
+      <p class="subtitle is-size-5">
+        A clean and intuitive introduction to three essential RL algorithms used in modern robotics
+      </p>
+      <p>
+        <span class="tag is-info is-light">Robotics</span>
+        <span class="tag is-success is-light">Deep RL</span>
+        <span class="tag is-warning is-light">Continuous Control</span>
+      </p>
+    </div>
+  </div>
+</section>
+
+
+<!-- Main Content -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="content">
+
+      <!-- INTRO -->
+      <h2 class="title is-3">💡 1. Why These Algorithms Matter</h2>
+      <p>
+        Modern reinforcement learning relies on a small family of algorithms that work well in
+        high-dimensional, continuous control settings — exactly the kind you see in robot arms,
+        manipulators, drones, and simulation environments like MuJoCo, IsaacGym, or ManiSkill.
+      </p>
+      <p>
+        The three most widely used today are:
+      </p>
+      <ul>
+        <li><strong>PPO</strong> — stable policy gradients</li>
+        <li><strong>SAC</strong> — entropy-regularized, robust learning</li>
+        <li><strong>TD3</strong> — accurate deterministic control</li>
+      </ul>
+
+      <hr>
+
+      <!-- PPO -->
+      <h2 class="title is-3">🔵 2. PPO — Proximal Policy Optimization</h2>
+      <p>
+        PPO is a policy-gradient algorithm designed to avoid large, destabilizing updates.
+        Its key idea is simple: keep policy updates within a safe range.
+      </p>
+
+      <div class="box">
+        <strong>Key Idea:</strong> Use a <em>clipped objective</em> to limit how much the new policy can differ from the old one.<br><br>
+        <strong>Meaning:</strong> PPO prevents the agent from taking excessively large learning steps that might destroy good behavior.  
+        It “nudges” the policy gently, ensuring stable improvement instead of volatile jumps.
+      </div>
+
+      <p>PPO optimizes a clipped version of the policy-gradient objective:</p>
+
+      <pre><code>L = min( r_t A_t , clip(r_t, 1-ε, 1+ε) A_t )</code></pre>
+
+      <p><strong>Why PPO works well:</strong></p>
+      <ul>
+        <li>Stable even with large neural networks</li>
+        <li>Simple to tune compared to TRPO</li>
+        <li>Works great for continuous control</li>
+      </ul>
+
+      <p><strong>Robotics intuition:</strong> PPO smoothly updates trajectories, reducing sudden behavioural changes — ideal for precise manipulation.</p>
+
+      <hr>
+
+      <!-- SAC -->
+      <h2 class="title is-3">🟢 3. SAC — Soft Actor–Critic</h2>
+      <p>
+        SAC is one of the strongest continuous-control algorithms today.  
+        It learns not just to maximize reward, but also to maintain high policy entropy.
+      </p>
+
+      <div class="box">
+        <strong>Key Idea:</strong> Add an entropy bonus so the agent prefers more random (exploratory) actions.<br><br>
+        <strong>Meaning:</strong> SAC encourages the robot to stay “uncertain enough” to explore effectively, leading to smoother, more robust policies that do not prematurely collapse into bad local optima.
+      </div>
+
+      <p>Its objective encourages both reward and exploration:</p>
+
+      <pre><code>J = E[ Q(s,a) - α log π(a|s) ]</code></pre>
+
+      <p><strong>Why SAC is powerful:</strong></p>
+      <ul>
+        <li>Excellent sample efficiency</li>
+        <li>Robust under noise and uncertainty</li>
+        <li>Automatically balances exploration and exploitation</li>
+      </ul>
+
+      <p><strong>Robotics intuition:</strong> SAC yields smooth, reliable motor commands — great for grasping, pushing, insertion, and dexterous tasks.</p>
+
+      <hr>
+
+      <!-- TD3 -->
+      <h2 class="title is-3">🔴 4. TD3 — Twin Delayed DDPG</h2>
+      <p>
+        TD3 improves upon DDPG by addressing overestimation bias and instability.
+        It introduces three coordinated modifications to make training more reliable.
+      </p>
+
+      <div class="box">
+        <strong>Key Idea:</strong> Use <em>two critics, delayed actor updates, and smoothed target actions</em> to stabilize learning.<br><br>
+        <strong>Meaning:</strong> TD3 reduces noisy Q-value spikes and prevents the policy from exploiting inaccurate critic estimates, resulting in more predictable and precise control.
+      </div>
+
+      <p>TD3's three improvements:</p>
+
+      <ol>
+        <li><strong>Twin critics</strong> — take the minimum Q estimate to avoid overestimation</li>
+        <li><strong>Delayed policy updates</strong> — the actor updates slower than the critics</li>
+        <li><strong>Target policy smoothing</strong> — adds noise to target actions for stability</li>
+      </ol>
+
+      <p><strong>Why TD3 is effective:</strong></p>
+      <ul>
+        <li>Reliable deterministic control</li>
+        <li>Strong performance in smooth environments</li>
+        <li>Prevents the policy from overfitting to critic noise</li>
+      </ul>
+
+      <p><strong>Robotics intuition:</strong> TD3 excels in low-noise tasks where precise joint-space control matters.</p>
+
+      <hr>
+
+      <!-- Summary -->
+      <h2 class="title is-3">📘 5. Comparing PPO, SAC, and TD3</h2>
+
+      <table class="table is-striped is-fullwidth">
+        <thead>
+          <tr>
+            <th>Algorithm</th>
+            <th>Best Feature</th>
+            <th>Key Idea</th>
+            <th>When to Use It</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>PPO</strong></td>
+            <td>Stable learning</td>
+            <td>Policy update clipping</td>
+            <td>Large policies, imitation+RL, vision-based tasks</td>
+          </tr>
+          <tr>
+            <td><strong>SAC</strong></td>
+            <td>State-of-the-art robustness</td>
+            <td>Entropy-regularized objective</td>
+            <td>Real robots, noisy sensing, complex manipulation</td>
+          </tr>
+          <tr>
+            <td><strong>TD3</strong></td>
+            <td>Accurate deterministic control</td>
+            <td>Twin critics + smoothing + delayed updates</td>
+            <td>Low-noise simulation, precise joint-torque control</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="box">
+        <strong>TL;DR:</strong><br>
+        PPO → stable learner 👍<br>
+        SAC → strongest overall performance 🔥<br>
+        TD3 → precision control expert 🎯
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="content has-text-centered">
+    <p>RL Algorithms Blog — Built with Academic Project Template ✨</p>
+  </div>
+</footer>
+
+</body>
+</html>

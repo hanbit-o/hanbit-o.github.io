@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+
+  <meta name="description" content="A clear and intuitive explanation of reward, value, and advantage in Reinforcement Learning.">
+  <meta property="og:title" content="Reward, Value, and Advantage in Reinforcement Learning"/>
+  <meta property="og:description" content="An intuitive, math-aware explanation of reward, value, advantage, and their roles in RL, with robotics examples."/>
+  <meta property="og:url" content="URL OF THE WEBSITE"/>
+  <meta property="og:image" content="static/image/your_banner_image.png" />
+
+  <meta name="twitter:title" content="Reward, Value, and Advantage in RL">
+  <meta name="twitter:description" content="A simple, intuitive explanation of reward, value, and advantage in RL.">
+  <meta name="twitter:image" content="static/images/your_twitter_banner_image.png">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <meta name="keywords" content="Reinforcement Learning, Reward, Value, Advantage, Bellman Equation, Q-Learning, PPO">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Reward, Value, and Advantage in Reinforcement Learning</title>
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+</head>
+<body>
+
+<section class="hero is-light">
+  <div class="hero-body">
+    <div class="container is-max-desktop has-text-centered">
+      <h1 class="title is-1">Reward, Value, and Advantage in Reinforcement Learning</h1>
+      <p class="subtitle is-size-5">A simple, intuitive, and mathematical guide</p>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="content">
+
+      <!-- BIG PICTURE -->
+      <h2 class="title is-3">💡 0. Big Picture</h2>
+      <p>🔎 RL uses three core concepts to judge decisions: <strong>reward</strong>, <strong>value</strong>, and <strong>advantage</strong>.</p>
+
+      <ul>
+        <li>🎯 <strong>Reward</strong>: immediate feedback</li>
+        <li>📈 <strong>Value</strong>: long-term expectation</li>
+        <li>⭐ <strong>Advantage</strong>: whether an action is better than usual</li>
+      </ul>
+
+      <div class="box">
+        <p><strong>🎮 Analogy:</strong> Picking up a coin is reward. Entering a treasure-rich room is high value. Choosing the best path inside that room is advantage.</p>
+      </div>
+
+      <hr>
+
+      <!-- REWARD -->
+      <h2 class="title is-3">1. What Is a Reward?</h2>
+      <p>⚡ Reward is the <strong>immediate signal</strong> from the environment telling how good the last action was.</p>
+
+      <ul>
+        <li>🟢 Given directly by the environment</li>
+        <li>⏱ Short-term</li>
+        <li>🛠 Task-designer defined</li>
+      </ul>
+
+      <p><strong>Example (robotics):</strong> Successful grasp → <code>+1.0</code>; dropping object → <code>-1.0</code>.</p>
+
+      <hr>
+
+      <!-- VALUE -->
+      <h2 class="title is-3">2. What Is a Value?</h2>
+      <p>🔮 Value measures the <strong>expected future reward</strong> from a state.</p>
+
+      <pre><code>Vπ(s) = 𝔼π[ Σ γᵏ rₜ₊ₖ | sₜ = s ]</code></pre>
+
+      <ul>
+        <li>🧭 Looks into the future</li>
+        <li>📘 Learned, not provided</li>
+        <li>🏗 Used for planning & prediction</li>
+      </ul>
+
+      <p><strong>Intuition:</strong> A state with zero reward can still have high value if it's near success.</p>
+
+      <hr>
+
+      <!-- BELLMAN -->
+      <h2 class="title is-3">3. Bellman Equation</h2>
+      <p>🔁 The Bellman equation expresses value recursively:</p>
+
+      <pre><code>Vπ(s) = 𝔼[ rₜ + γ Vπ(sₜ₊₁) ]</code></pre>
+
+      <p>💡 This allows RL to update its estimates using future predictions.</p>
+
+      <hr>
+
+      <!-- REWARD VS VALUE -->
+      <h2 class="title is-3">4. Reward vs. Value</h2>
+      <table class="table is-striped is-fullwidth">
+        <tbody>
+          <tr>
+            <td><strong>Reward</strong></td>
+            <td>Immediate outcome</td>
+          </tr>
+          <tr>
+            <td><strong>Value</strong></td>
+            <td>Long-term desirability</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <ul>
+        <li>🔥 Reward = what just happened</li>
+        <li>🔮 Value = what will likely happen</li>
+      </ul>
+
+      <hr>
+
+      <!-- ADVANTAGE -->
+      <h2 class="title is-3">⭐ 5. What Is Advantage?</h2>
+      <p>🚀 Advantage answers: <strong>“Is this action better or worse than my usual action in this state?”</strong></p>
+
+      <pre><code>Aπ(s,a) = Qπ(s,a) − Vπ(s)</code></pre>
+
+      <p>✔ Positive advantage → better-than-average action  
+         ✘ Negative advantage → worse-than-average  
+      </p>
+
+      <div class="notification is-info is-light">
+        📌 <strong>Why RL uses it:</strong> Advantage reduces variance and stabilizes policy gradient updates (PPO, A2C, TRPO).
+      </div>
+
+      <p><strong>Robot example:</strong></p>
+      <ul>
+        <li>Action moving gripper toward object → higher Q → positive advantage</li>
+        <li>Action moving away → lower Q → negative advantage</li>
+      </ul>
+
+      <hr>
+
+      <!-- ROBOTICS -->
+      <h2 class="title is-3">🤖 6. Robotics Example</h2>
+      <p>🔧 In pick-and-place tasks:</p>
+      <ul>
+        <li>Reward is sparse (often 0 until success).</li>
+        <li>Value rises as the robot approaches grasping.</li>
+        <li>Advantage highlights which micro-actions improve grasp success.</li>
+      </ul>
+
+      <div class="box">
+        <p><strong>Summary:</strong><br>
+        Reward defines the goal.<br>
+        Value estimates long-term success.<br>
+        Advantage tells the robot which action is best right now.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="content has-text-centered">
+    <p>Minimal RL Blog — Based on Academic Project Page Template ✨</p>
+  </div>
+</footer>
+
+</body>
+</html>
