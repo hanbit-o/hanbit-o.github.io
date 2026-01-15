@@ -50,6 +50,12 @@ body {
     font-family: 'Google Sans', sans-serif;
 }
 
+.publication-title .title-suffix {
+  display: block;
+  font-size: 0.8em;
+  line-height: 1.2;
+}
+
 .publication-authors {
     font-family: 'Google Sans', sans-serif;
 }
@@ -131,6 +137,5 @@ body {
 .eql-cntrb { 
   font-size: smaller;
 }
-
 
 

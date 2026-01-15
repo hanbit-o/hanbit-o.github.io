@@ -24,7 +24,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-  <title>Robust Instant Policy: Student’s-t-Based Trajectory Aggregation for Reliable In-Context Imitation Learning in Robot Manipulation</title>
+  <title>Robust Instant Policy:
+  Student’s-t-Based Trajectory Aggregation for Reliable In-Context Imitation Learning in Robot Manipulation
+  </title>
+
   <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
   rel="stylesheet">
@@ -52,27 +55,32 @@
       <div class="container is-max-desktop">
         <div class="columns is-centered">
           <div class="column has-text-centered">
-            <h1 class="title is-1 publication-title">Robust Instant Policy: Student’s-t-Based Trajectory Aggregation for Reliable In-Context Imitation Learning in Robot Manipulation</h1>
+            <h1 class="title is-1 publication-title">
+              Robust Instant Policy:<br>
+              <span class="title-suffix">Student’s-t-Based Trajectory Aggregation for Reliable In-Context Imitation Learning in Robot Manipulation</span>
+            </h1>
             <div class="is-size-5 publication-authors">
               <!-- Paper authors -->
               <span class="author-block">
+                Anonymous</span>
+              <!-- <span class="author-block">
                 <a href="FIRST AUTHOR PERSONAL LINK" target="_blank">First Author</a><sup>*</sup>,</span>
                 <span class="author-block">
                   <a href="SECOND AUTHOR PERSONAL LINK" target="_blank">Second Author</a><sup>*</sup>,</span>
                   <span class="author-block">
                     <a href="THIRD AUTHOR PERSONAL LINK" target="_blank">Third Author</a>
-                  </span>
+                  </span> -->
                   </div>
 
-                  <div class="is-size-5 publication-authors">
+                  <!-- <div class="is-size-5 publication-authors">
                     <span class="author-block">Institution Name<br>Conferance name and year</span>
                     <span class="eql-cntrb"><small><br><sup>*</sup>Indicates Equal Contribution</small></span>
-                  </div>
+                  </div> -->
 
                   <div class="column has-text-centered">
                     <div class="publication-links">
                          <!-- Arxiv PDF link -->
-                      <span class="link-block">
+                      <!-- <span class="link-block">
                         <a href="https://arxiv.org/pdf/<ARXIV PAPER ID>.pdf" target="_blank"
                         class="external-link button is-normal is-rounded is-dark">
                         <span class="icon">
@@ -80,10 +88,10 @@
                         </span>
                         <span>Paper</span>
                       </a>
-                    </span>
+                    </span> -->
 
                     <!-- Supplementary PDF link -->
-                    <span class="link-block">
+                    <!-- <span class="link-block">
                       <a href="static/pdfs/supplementary_material.pdf" target="_blank"
                       class="external-link button is-normal is-rounded is-dark">
                       <span class="icon">
@@ -91,7 +99,7 @@
                       </span>
                       <span>Supplementary</span>
                     </a>
-                  </span>
+                  </span> -->
 
                   <!-- Github link -->
                   <span class="link-block">
@@ -100,7 +108,7 @@
                     <span class="icon">
                       <i class="fab fa-github"></i>
                     </span>
-                    <span>Code</span>
+                    <span>Code: Coming Soon</span>
                   </a>
                 </span>
 
@@ -111,7 +119,7 @@
                   <span class="icon">
                     <i class="ai ai-arxiv"></i>
                   </span>
-                  <span>arXiv</span>
+                  <span>arXiv: Coming Soon</span>
                 </a>
               </span>
             </div>
@@ -142,10 +150,10 @@
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
-        <h2 class="title is-3">Abstract</h2>
+        <h2 class="title is-2">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            Imitation learning (IL) enables robots to acquire autonomous skills from human demonstrations. Recent in-context IL (ICIL) methods leverage off-the-shelf large language models (LLMs) as instant policies that infer task context and generate executable trajectories from only a few demonstrations, without retraining model parameters. However, the reliability of LLM-based instant policies is limited by hallucinations, which produce outlier trajectories inconsistent with the demonstrations. This issue is further amplified in multimodal tasks, where multiple distinct yet equally valid strategies exist in human demonstrations. To address these challenges, we propose the Robust Instant Policy (RIP) framework, which improves reliability by robustly aggregating multiple trajectories sampled from an LLM. As a concrete instantiation, we introduce Student’s-t mixture model RIP (SMM-RIP), which captures trajectory multimodality via an SMM-RIP and extracts a robust representative trajectory using Student’s-t regression, effectively suppressing hallucinated outliers while preserving valid strategies. Experiments on 15 everyday manipulation tasks in both simulated and real-world environments show that SMM-RIP consistently outperforms state-of-the-art IL methods, particularly in low-data regimes. These results highlight the importance of robustness and flexible multimodal modeling for reliable LLM-based ICIL.
+            Imitation learning (IL) enables robots to acquire autonomous skills from human demonstrations. Recent in-context IL (ICIL) methods leverage off-the-shelf large language models (LLMs) as instant policies that infer task context and generate executable trajectories from only a few demonstrations, without retraining model parameters. However, the reliability of LLM-based instant policies is limited by hallucinations, which produce outlier trajectories inconsistent with the demonstrations. This issue is further amplified in multimodal tasks, where multiple distinct yet equally valid strategies exist in human demonstrations. To address these challenges, we propose the Robust Instant Policy (RIP) framework, which improves reliability by robustly aggregating multiple trajectories sampled from an LLM. As a concrete instantiation, we introduce Student’s-t mixture model RIP (SMM-RIP), which captures trajectory multimodality via an SMM and extracts a robust representative trajectory using Student’s-t regression, effectively suppressing hallucinated outliers while preserving valid strategies. Experiments on 15 everyday manipulation tasks in both simulated and real-world environments show that SMM-RIP consistently outperforms state-of-the-art IL methods, particularly in low-data regimes. These results highlight the importance of robustness and flexible multimodal modeling for reliable LLM-based ICIL.
           </p>
         </div>
       </div>
@@ -203,9 +211,8 @@
 <section class="hero is-small">
   <div class="hero-body">
     <div class="container is-max-desktop content">
-      <h2 class="title is-3 has-text-centered">Evaluation</h2>
-      <br>
-      <h3 class="subtitle is-5 has-text-centered"><strong>Environments and Tasks</strong></h3>
+      <h2 class="title is-2 has-text-centered">Evaluation</h2>
+      <h3 class="subtitle is-4"><strong>Environments and Tasks</strong></h3>
       <div class="content has-text-justified">
       <p>
         To evaluate the SMM-RIP, a set of 15 everyday manipulation tasks was defined across both simulated and real-world environments, as shown in fig 2. 
@@ -225,7 +232,7 @@
       </div>
       <!--Change references-->
       <br>
-      <h3 class="subtitle is-5 "><strong>Comparison Methods</strong></h3>
+      <h3 class="subtitle is-4 "><strong>Comparison Methods</strong></h3>
       <div class="content has-text-justified">
         <ul>
           <li>
@@ -252,11 +259,8 @@
         </ul>
       </div>
       <br>
-      <h3 class="subtitle is-5"><strong>Qualitative results</strong></h3>
-      <br>
-      <h4 class="subtitle is-6" style="color: #1976d2;"><b>Simulation Evaluation</b></h4>
-      <br>
-      <h5 class="subtitle is-6"><strong>Teleoperation System for Demonstration</strong></h5>
+      <h3 class="subtitle is-3" style="color: #0081d1;"><b>Qualitative results: Simulation</b></h3>
+      <h4 class="subtitle is-5"><strong>Teleoperation System for Demonstration</strong></h4>
       <div class="columns">
         <div class="column is-one-third">
           <div class="video-container" style="position:relative;padding-bottom:100%;height:0;overflow:hidden;">
@@ -273,7 +277,7 @@
       </div>
       <!----------------------------------------------------------------->
       <br>
-      <h5 class="subtitle is-6"><strong>Simulation Unimodal Task: Pick Banana</strong></h5>
+      <h4 class="subtitle is-5"><strong>Simulation Unimodal Task: Pick Banana</strong></h4>
       <div class="columns is-centered">
         <!-- First and second columns: Image spanning two columns -->
         <!-- First column: Image spanning two-thirds of the row -->
@@ -323,7 +327,7 @@
       </div>
 
       <br>
-      <h5 class="subtitle is-6"><strong>Simulation Unimodal Task: Push Cube</strong></h5>
+      <h4 class="subtitle is-5"><strong>Simulation Unimodal Task: Push Cube</strong></h4>
       <div class="columns is-centered">
         <!-- First and second columns: Image spanning two columns -->
         <!-- First column: Image spanning two-thirds of the row -->
@@ -371,7 +375,7 @@
       </div>
 
       <br>
-      <h5 class="subtitle is-6"><strong>Simulation Unimodal Task: Open Drawer</strong></h5>
+      <h4 class="subtitle is-5"><strong>Simulation Unimodal Task: Open Drawer</strong></h4>
       <div class="columns is-centered">
         <!-- First and second columns: Image spanning two columns -->
         <!-- First column: Image spanning two-thirds of the row -->
@@ -421,7 +425,7 @@
       </div>
 
       <br>
-      <h5 class="subtitle is-6"><strong>Simulation Unimodal Task: Close Cabinet</strong></h5>
+      <h4 class="subtitle is-5"><strong>Simulation Unimodal Task: Close Cabinet</strong></h4>
       <div class="columns is-centered">
         <!-- First and second columns: Image spanning two columns -->
         <!-- First column: Image spanning two-thirds of the row -->
@@ -470,7 +474,7 @@
       </div>
 
       <br>
-      <h5 class="subtitle is-6"><strong>Simulation Unimodal Task: Turn Faucet</strong></h5>
+      <h4 class="subtitle is-5"><strong>Simulation Unimodal Task: Turn Faucet</strong></h4>
       <div class="columns is-centered">
         <!-- First and second columns: Image spanning two columns -->
         <!-- First column: Image spanning two-thirds of the row -->
@@ -523,7 +527,7 @@
         </div>
       </div>
       <br>
-      <h5 class="subtitle is-6"><strong>Simulation Multimodal Task: Draw Triangle</strong></h5>
+      <h4 class="subtitle is-5"><strong>Simulation Multimodal Task: Draw Triangle</strong></h4>
       <div class="columns is-centered">
         <!-- First and second columns: Image spanning two columns -->
         <!-- First column: Image spanning two-thirds of the row -->
@@ -572,7 +576,7 @@
       </div>
     <!----------------------------------------------------------------->
     <br>
-      <h5 class="subtitle is-6"><strong>Simulation Multimodal Task: Push Pull Cube</strong></h5>
+      <h4 class="subtitle is-5"><strong>Simulation Multimodal Task: Push Pull Cube</strong></h4>
       <div class="columns is-centered">
         <!-- First and second columns: Image spanning two columns -->
         <!-- First column: Image spanning two-thirds of the row -->
@@ -621,9 +625,9 @@
       </div>
       <!----------------------------------------------------------------->
       <!--- Real world evaluation --->
-      <h4 class="subtitle is-6" style="color: #1976d2;"><b>Real-world Evaluation</b></h4>
+      <h3 class="subtitle is-3" style="color: #0081d1;"><b>Qualitative results: Real-world</b></h3>
       <br>
-      <h5 class="subtitle is-6"><strong>Teleoperation System for Demonstration</strong></h5>
+      <h4 class="subtitle is-5"><strong>Teleoperation System for Demonstration</strong></h4>
       <div class="columns ">
         <div class="column is-one-third">
           <div class="video-container" style="position:relative;padding-bottom:100%;height:0;overflow:hidden;">
@@ -638,7 +642,7 @@
           <img src="../static/img/rip/real_tasks.png" alt="MY ALT TEXT" style="width: 100%; height: auto;"/>
         </div>
       </div>
-      <h5 class="subtitle is-6"><strong>Real Unimodal Task: Pick Banana</strong></h5>
+      <h4 class="subtitle is-5"><strong>Real Unimodal Task: Pick Banana</strong></h4>
       <p><strong>Success condition:</strong> at the end of the episode, the banana is picked up</p>
       <div class="columns is-centered">
         <div class="column">
@@ -666,7 +670,7 @@
           <img src="../static/video/rip/real_world/pick_banana/SMM.gif" alt="SMM-RIP" style="width: 100%; background: #222;">
         </div>
       </div>
-      <h5 class="subtitle is-6"><strong>Real Unimodal Task: Hanger</strong></h5>
+      <h4 class="subtitle is-5"><strong>Real Unimodal Task: Hanger</strong></h4>
       <p><strong>Success condition:</strong> at the end of the episode, the hanger is hung on the stand</p>
       <div class="columns is-centered">
         <div class="column">
@@ -694,7 +698,7 @@
           <img src="../static/video/rip/real_world/hanger/SMM.gif" alt="SMM-RIP" style="width: 100%; background: #222;">
         </div>
       </div>
-      <h5 class="subtitle is-6"><strong>Real Unimodal Task: Cup Upright</strong></h5>
+      <h4 class="subtitle is-5"><strong>Real Unimodal Task: Cup Upright</strong></h4>
       <p><strong>Success condition:</strong> at the end of the episode, the cup is vertically placed on the table</p>
       <div class="columns is-centered">
         <div class="column">
@@ -722,7 +726,7 @@
           <img src="../static/video/rip/real_world/cup_upright/SMM.gif" alt="SMM-RIP" style="width: 100%; background: #222;">
         </div>
       </div>
-      <h5 class="subtitle is-6"><strong>Real Unimodal Task: Sweep</strong></h5>
+      <h4 class="subtitle is-5"><strong>Real Unimodal Task: Sweep</strong></h4>
       <p><strong>Success condition:</strong> at the end of the episode, the dust (cubes) is on the dust pan</p>
       <div class="columns is-centered">
         <div class="column">
@@ -764,7 +768,7 @@
           <img src="../static/video/rip/real_world/sweep/SMM_3.gif" alt="SMM-RIP" style="width: 100%; background: #222;">
         </div>
       </div>
-      <h5 class="subtitle is-6"><strong>Real Unimodal Task: Pick and Place</strong></h5>
+      <h4 class="subtitle is-5"><strong>Real Unimodal Task: Pick and Place</strong></h4>
       <p><strong>Success condition:</strong> at the end of the episode, the bottle is in the bowl</p>
       <div class="columns is-centered">
         <div class="column">
@@ -806,7 +810,7 @@
           <img src="../static/video/rip/real_world/pick_and_place/SMM_3.gif" alt="SMM-RIP" style="width: 100%; background: #222;">
         </div>
       </div>
-      <h5 class="subtitle is-6"><strong>Real Multimodal Task: Wipe Plate</strong></h5>
+      <h4 class="subtitle is-5"><strong>Real Multimodal Task: Wipe Plate</strong></h4>
       <p><strong>Success condition:</strong> At the end of the episode, the sponge should have wiped along the entire contour of the plate, maintaining contact throughout, without significantly moving the plate</p>
       <div class="columns is-centered">
         <div class="column">
@@ -846,7 +850,7 @@
           </div>
         </div>
       </div>
-      <h5 class="subtitle is-6"><strong>Real Multimodal Task: Pick Hanger</strong></h5>
+      <h4 class="subtitle is-5"><strong>Real Multimodal Task: Pick Hanger</strong></h4>
       <p><strong>Success condition:</strong> At the end of the episode, the hanger should be pick up by any side</p>
       <div class="columns is-centered">
         <div class="column">
@@ -886,7 +890,7 @@
           </div>
         </div>
       </div>
-      <h5 class="subtitle is-6"><strong>Real Multimodal Task: Place Cube</strong></h5>
+      <h4 class="subtitle is-5"><strong>Real Multimodal Task: Place Cube</strong></h4>
       <p><strong>Success condition:</strong> At the end of the episode, the cube should be placed in any cup</p>
       <div class="columns is-centered">
         <div class="column">
@@ -934,99 +938,171 @@
 <!-- Quantitative Results -->
 <section class="section" id="Results">
   <div class="container is-max-desktop content">
-    <h2 class="title">Quantitative Results</h2>
+    <h2 class="subtitle is-3" style="color: #0081d1;"><b>Quantitative Results</b></h2>
+    <h3 class="subtitle is-5"><b>How does the SMM-RIP compare with state-of-the-art IL and instant policy methods in terms of flexibility for multimodal tasks and robustness against LLM-induced hallucinations?</b></h3>
     <div class="content has-text-justified">
       <p>The results of the quantitative analysis comparing the policy success rates of each method are presented as below:</p>
       <div>
-        <img src="../static/img/rip/result_quanti_demo10.png" alt="Quantitative Results Figure 3" style="max-width:100%; border:1px solid #ccc;"/> 
+        <img src="../static/img/rip/result_quanti_demo10.png"
+            alt="Quantitative Results (Result 1)"
+            style="max-width:100%; border:1px solid #ccc;" />
+
         <p>
-          <strong>Result 1:</strong> The chart above compares the success rates of SMM-RIP and baseline methods using ten demonstrations per task.<br>
-          <b>(a)</b> <i>Top:</i> Simulation results; <i>Bottom:</i> Real-world results.<br>
-          The success rate for each method is measured over 50 test executions in simulation and 10 in real-world experiments. Bars not visible in the plot indicate a zero success rate.<br>
-          <b>(b)</b> From top to bottom: average success rates across unimodal, multimodal, and all tasks, computed by jointly considering simulation and real-world results.<br>
-          The averages indicate the mean and standard deviation across runs.<br>
-          <u>Our method (SMM-RIP) shows significantly higher performance than those marked with <span style="color:#d32f2f;">*</span> (t-test, <i>p</i> &lt; 5&times;10<sup>&minus;2</sup>).</u>
+          <strong>Result 1.</strong>
+          Comparison of SMM-RIP with baseline methods using
+            10 demonstrations per task.
+          <br>
+
+          <b>(a)</b> <i>Top:</i> Simulation &nbsp;|&nbsp; <i>Bottom:</i> Real world.
+          Success rates are measured over
+            50 executions (simulation) and
+            10 executions (real world).
+            Missing bars indicate zero success.
+          <br>
+
+          <b>(b)</b> Average success rates on
+          <i>unimodal</i>, <i>multimodal</i>, and <i>all</i> tasks
+          (simulation + real world).
+          Shaded regions show mean ± standard deviation.<br>
+
+          <u>
+            Methods marked with
+            <span style="color:#d32f2f;">*</span>
+            perform significantly worse than SMM-RIP
+            (t-test, <i>p</i> &lt; 5&times;10<sup>&minus;2</sup>).
+          </u>
         </p>
       </div>
+
+      <p>
+        <strong>Takeaway.</strong>
+        SMM-RIP consistently achieves the highest success rates by
+        <em>robustly aggregating multiple LLM-generated trajectories and explicitly
+        handling multimodal solutions</em>.
+        This enables reliable few-shot robot execution without retraining,
+        even in the presence of LLM hallucinations.
+      </p>
+
+
       <br>
       <div>
-        <img src="../static/img/rip/result_total_demos_subplot.jpg" alt="Quantitative Results Figure 4" style="max-width:100%; border:1px solid #ccc;"/>
+        <img src="../static/img/rip/result_total_demos_subplot.jpg"
+            alt="Quantitative Results (Result 2)"
+            style="max-width:100%; border:1px solid #ccc;" />
+
         <p>
-          <b>Result 2:</b> Quantitative results comparing the success rates of the SMM-RIP and baseline methods as a function of the number of demonstrations (<i>3,5,10,15,20</i>). All curves show the mean success rate (solid line) and standard deviation (shaded region) for all the simulation tasks. The success rate of each method was measured over 50 test executions. (Left) Unimodal tasks. (Center) Multimodal tasks. (Right) All tasks combined.
+          <strong>Result 2.</strong>
+          Success rates as a function of the number of demonstrations
+          (<i>3, 5, 10, 15, 20</i>) in simulation experiments.<br>
+
+            All curves report the mean success rate (solid line)
+            with standard deviation (shaded region),
+            measured over 50 executions per task.
+          <br>
         </p>
-      </div>  
+      </div>
+
+      <p>
+        <strong>Takeaway.</strong>
+        SMM-RIP consistently achieves the highest success rates across all data regimes,
+        with the largest gains in the <em>low-data setting</em> (3–5 demonstrations).
+        While unimodal aggregation degrades on multimodal tasks,
+        SMM-RIP remains robust by explicitly modeling multiple valid strategies,
+        highlighting the importance of multimodal, outlier-robust aggregation when demonstrations are scarce.
+      </p>
+
     </div>
   </div>
 </section>
-<!-- End Quantitative Results -->
 
-<!-- RIP Design Analysis -->
-<section class="section" id="RIP_Design_Analysis">
+<section class="section" id="Results">
   <div class="container is-max-desktop content">
-    <h2 class="title">RIP Design Analysis</h2>
-    <div class="content has-text-justified">
-      <p>
-        To evaluate the contribution of each design component in the SMM-RIP, a quantitative analysis was conducted on four factors: the number of queries (<i>Q</i>), degrees of freedom (&nu;), number of mixture components (<i>M</i>), and the effect of applying SNN-RIP regression after SMM.
-      </p>
-    </div>
-    <div class="content">
-      <div class="columns is-multiline is-centered">
-        <!-- Row 1: nu plots -->
-        <div class="column is-one-third has-text-centered">
-          <span style="font-size:small;">Unimodal Tasks</span><br>
-          <img src="../static/img/rip/result_uni_nu_plot.jpg" alt="Unimodal Tasks nu plot" style="width:100%; max-width:300px;">
-        </div>
-        <div class="column is-one-third has-text-centered">
-          <span style="font-size:small;">Multimodal Tasks</span><br>
-          <img src="../static/img/rip/result_mult_nu_plot.jpg" alt="Multimodal Tasks nu plot" style="width:100%; max-width:300px;">
-        </div>
-        <div class="column is-one-third has-text-centered">
-          <span style="font-size:small;">All Tasks</span><br>
-          <img src="../static/img/rip/result_total_nu_plot.jpg" alt="All Tasks nu plot" style="width:100%; max-width:300px;">
-        </div>
-        <!-- Row 2: q plots -->
-        <div class="column is-one-third has-text-centered">
-          <img src="../static/img/rip/result_uni_q_plot.jpg" alt="Unimodal Tasks q plot" style="width:100%; max-width:300px;">
-        </div>
-        <div class="column is-one-third has-text-centered">
-          <img src="../static/img/rip/result_mult_q_plot.jpg" alt="Multimodal Tasks q plot" style="width:100%; max-width:300px;">
-        </div>
-        <div class="column is-one-third has-text-centered">
-          <img src="../static/img/rip/result_total_q_plot.jpg" alt="All Tasks q plot" style="width:100%; max-width:300px;">
-        </div>
-        <!-- Row 3: m plots -->
-        <div class="column is-one-third has-text-centered">
-          <img src="../static/img/rip/result_uni_m_plot.jpg" alt="Unimodal Tasks m plot" style="width:100%; max-width:300px;">
-        </div>
-        <div class="column is-one-third has-text-centered">
-          <img src="../static/img/rip/result_mult_m_plot.jpg" alt="Multimodal Tasks m plot" style="width:100%; max-width:300px;">
-        </div>
-        <div class="column is-one-third has-text-centered">
-          <img src="../static/img/rip/result_total_m_plot.jpg" alt="All Tasks m plot" style="width:100%; max-width:300px;">
+    <h3 class="subtitle is-5"><b>Which RIP configurations yield the best performance?</b></h3>
+      <div class="content has-text-justified">
+        <p>
+          To evaluate the contribution of each design component in the SMM-RIP, a quantitative analysis was conducted on four factors: the number of queries (<i>Q</i>), degrees of freedom (&nu;), number of mixture components (<i>M</i>), and the effect of applying SNN-RIP regression after SMM.
+        </p>
+      </div>
+      <div class="content">
+        <div class="columns is-multiline is-centered">
+          <!-- Row 1: nu plots -->
+          <div class="column is-one-third has-text-centered">
+            <strong style="font-size:big;">Unimodal Tasks</strong><br>
+            <img src="../static/img/rip/result_uni_nu_plot.jpg" alt="Unimodal Tasks nu plot" style="width:100%; max-width:300px;">
+          </div>
+          <div class="column is-one-third has-text-centered">
+            <strong style="font-size:big;">Multimodal Tasks</strong><br>
+            <img src="../static/img/rip/result_mult_nu_plot.jpg" alt="Multimodal Tasks nu plot" style="width:100%; max-width:300px;">
+          </div>
+          <div class="column is-one-third has-text-centered">
+            <strong style="font-size:big;">All Tasks</strong><br>
+            <img src="../static/img/rip/result_total_nu_plot.jpg" alt="All Tasks nu plot" style="width:100%; max-width:300px;">
+          </div>
+          <!-- Row 2: q plots -->
+          <div class="column is-one-third has-text-centered">
+            <img src="../static/img/rip/result_uni_q_plot.jpg" alt="Unimodal Tasks q plot" style="width:100%; max-width:300px;">
+          </div>
+          <div class="column is-one-third has-text-centered">
+            <img src="../static/img/rip/result_mult_q_plot.jpg" alt="Multimodal Tasks q plot" style="width:100%; max-width:300px;">
+          </div>
+          <div class="column is-one-third has-text-centered">
+            <img src="../static/img/rip/result_total_q_plot.jpg" alt="All Tasks q plot" style="width:100%; max-width:300px;">
+          </div>
+          <!-- Row 3: m plots -->
+          <div class="column is-one-third has-text-centered">
+            <img src="../static/img/rip/result_uni_m_plot.jpg" alt="Unimodal Tasks m plot" style="width:100%; max-width:300px;">
+          </div>
+          <div class="column is-one-third has-text-centered">
+            <img src="../static/img/rip/result_mult_m_plot.jpg" alt="Multimodal Tasks m plot" style="width:100%; max-width:300px;">
+          </div>
+          <div class="column is-one-third has-text-centered">
+            <img src="../static/img/rip/result_total_m_plot.jpg" alt="All Tasks m plot" style="width:100%; max-width:300px;">
+          </div>
         </div>
       </div>
-    </div>
 
-    <div class="content has-text-justified">
-      <p>
-        Design analysis of RIP variants focusing on three key elements: the degrees of freedom &nu;, number of queries Q, and number of mixture components M. <br>
-        <strong>(Top–bottom)</strong> Success rate comparisons under different configurations of &nu; = {0.1, 0.5, 1.0, 1.5, 3.0, &infin;}, Q = {3, 5, 10}, and M = {1, 3, 5}. <br>
-        All results present the mean and standard deviation of the success rates, evaluated over 50 simulated test executions per task using 20 demonstrations.
+      <div class="content has-text-justified">
+        <p>
+        <strong>Result 3.</strong>
+        Design analysis of RIP variants highlighting three key factors:
+        the Student’s-<i>t</i> degrees of freedom (&nu;),
+        the number of trajectory queries (<i>Q</i>),
+        and the number of mixture components (<i>M</i>).<br>
+
+        <b>Top → Bottom:</b>
+        Success rates under different configurations of
+        &nu; = {0.1, 0.5, 1.0, 1.5, 3.0, &infin;},
+        Q = {3, 5, 10},
+        and M = {1, 3, 5}.<br>
+
+        Results report the mean success rate with
+        standard deviation,
+        evaluated over 50 simulation runs per task
+        using 20 demonstrations.
       </p>
-    </div>
+
+      <p>
+        <strong>Takeaway.</strong>
+        The analysis shows that heavy-tailed modeling (&nu; &lt; &infin;)
+        and sufficient trajectory sampling (<i>Q</i> ≥ 5)
+        are critical for suppressing hallucinated outliers,
+        while multiple mixture components (<i>M</i> &gt; 1)
+        are necessary to capture distinct valid strategies.
+        Together, these results justify the design choices of SMM-RIP.
+      </p>
+      </div>
   </div>
 </section>
 <!-- End RIP Design Analysis -->
 
 
-
 <!--BibTex citation -->
-  <section class="section" id="BibTeX">
+  <!-- <section class="section" id="BibTeX">
     <div class="container is-max-desktop content">
       <h2 class="title">BibTeX</h2>
       <pre><code>BibTex Code Here</code></pre>
     </div>
-</section>
+</section> -->
 <!--End BibTex citation -->
 
 
