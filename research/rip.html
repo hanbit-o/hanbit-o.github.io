@@ -280,7 +280,7 @@
         <div class="column is-two-thirds">
           <p class="has-text-centered" style="color: #888;"><strong>Success condition: </strong> at the end of the episode, the banana is picked up</p>
           <br>
-          <div class="columns">
+          <div  class="columns is-gapless">
             <div class="column">
               <img src="../static/img/rip/simulation/pick_banana_seed=15_num_demos=10_num_queries=10_SNN_2d_graph_gray_5.png" alt="MY ALT TEXT" style="width: 100%; height: auto;"/>
             </div>
@@ -330,7 +330,7 @@
         <div class="column is-two-thirds">
           <p class="has-text-centered" style="color: #888;"><strong>Success condition: </strong> at the end of the episode, the cube should be pushed out to the goal circle</p>
           <br>
-          <div class="columns">
+          <div  class="columns is-gapless">
             <div class="column">
               <img src="../static/img/rip/simulation/push_cube_seed=39_num_demos=3_num_queries=10_SNN_2d_graph_gray_5.png" alt="MY ALT TEXT" style="width: 100%; height: auto;"/>
             </div>
@@ -378,7 +378,7 @@
         <div class="column is-two-thirds">
           <p class="has-text-centered" style="color: #888;"><strong>Success condition: </strong>  at the end of the episode, the drawer is opened</p>
           <br>
-          <div class="columns">
+          <div  class="columns is-gapless">
             <div class="column">
               <img src="../static/img/rip/simulation/drawer_cabinet_seed=32_num_demos=10_num_queries=10_SNN_2d_graph_gray_5.png" alt="MY ALT TEXT" style="width: 100%; height: auto;"/>
             </div>
@@ -428,7 +428,7 @@
         <div class="column is-two-thirds">
           <p class="has-text-centered" style="color: #888;"><strong>Success condition: </strong>  at the end of the episode, the cabinet is closed completely</p>
           <br>
-          <div class="columns">
+          <div  class="columns is-gapless">
             <div class="column">
               <img src="../static/img/rip/simulation/close_cabinet_door_seed=38_num_demos=5_num_queries=10_SNN_2d_graph_gray_5.png" alt="MY ALT TEXT" style="width: 100%; height: auto;"/>
             </div>
@@ -477,14 +477,20 @@
         <div class="column is-two-thirds">
           <p class="has-text-centered" style="color: #888;"><strong>Success condition: </strong> at the end of the episode, the faucet is rotated</p>
           <br>
-          <div class="columns">
-            <div class="column">
-              <img src="../static/img/rip/simulation/turn_faucet_seed=18_num_demos=10_num_queries=10_SNN_2d_graph_gray_5.png" alt="MY ALT TEXT" style="width: 100%; height: auto;"/>
+            <!-- 
+              The "gap" parameter in the inline style of the <div> element sets the spacing between child elements within the flex or grid container.
+              In this case, 'gap: -0.5rem;' attempts to set a negative gap of -0.5rem, which is not standard and may not be supported in all browsers.
+              Normally, "gap" should be a positive value to create space between columns or rows.
+              Negative values may lead to unexpected layout behavior or be ignored by the browser.
+            -->
+            <div class="columns is-gapless">
+              <div class="column">
+                <img src="../static/img/rip/simulation/turn_faucet_seed=18_num_demos=10_num_queries=10_SNN_2d_graph_gray_5.png" alt="MY ALT TEXT" style="width: 100%; height: auto;"/>
+              </div>
+              <div class="column">
+                <img src="../static/img/rip/simulation/turn_faucet_seed=18_num_demos=10_num_queries=10_SMM_2d_graph_tomato_5.png" alt="MY ALT TEXT" style="width: 100%; height: auto;"/>
+              </div>
             </div>
-            <div class="column">
-              <img src="../static/img/rip/simulation/turn_faucet_seed=18_num_demos=10_num_queries=10_SMM_2d_graph_tomato_5.png" alt="MY ALT TEXT" style="width: 100%; height: auto;"/>
-            </div>
-          </div>
         </div>
         <!-- Second column: 2x2 videos in one-third of the row -->
         <div class="column is-one-third">
@@ -524,7 +530,7 @@
         <div class="column is-two-thirds">
           <p class="has-text-centered" style="color: #888;"><strong>Success condition: </strong> at the end of the episode, the triangle should be accurately drawn</p>
           <br>
-          <div class="columns">
+          <div  class="columns is-gapless">
             <div class="column">
               <img src="../static/img/rip/simulation/draw_triangle_seed=14_num_demos=20_num_queries=10_SNN_2d_graph_gray_5.png" alt="MY ALT TEXT" style="width: 100%; height: auto;"/>
             </div>
@@ -573,12 +579,12 @@
         <div class="column is-two-thirds">
           <p class="has-text-centered" style="color: #888;"><strong>Success condition: </strong> at the end of the episode, the cube should be outside of the goal area</p>
           <br>
-          <div class="columns">
+          <div class="columns is-gapless">
             <div class="column">
-              <img src="../static/img/rip/simulation/push_pull_cube_seed=40_num_demos=15_num_queries=10_SNN_2d_graph_gray_5.png" alt="MY ALT TEXT" style="width: 100%; height: auto;"/>
+              <img src="../static/img/rip/simulation/push_pull_cube_seed=40_num_demos=15_num_queries=10_SNN_2d_graph_gray_5.png" alt="MY ALT TEXT" style="width: 120%; height: auto;"/>
             </div>
             <div class="column">
-              <img src="../static/img/rip/simulation/push_pull_cube_seed=40_num_demos=15_num_queries=10_SMM_2d_graph_tomato_5.png" alt="MY ALT TEXT" style="width: 100%; height: auto;"/>
+              <img src="../static/img/rip/simulation/push_pull_cube_seed=40_num_demos=15_num_queries=10_SMM_2d_graph_tomato_5.png" alt="MY ALT TEXT" style="width: 120%; height: auto;"/>
             </div>
           </div>
         </div>
