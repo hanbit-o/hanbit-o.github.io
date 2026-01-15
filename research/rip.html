@@ -145,7 +145,7 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            Imitation learning (IL) enables robots to acquire autonomous skills from human demonstrations. Recent in-context IL (ICIL) methods leverage off-the-shelf large language models (LLMs) as instant policies that infer task context and generate executable trajectories from only a few demonstrations, without retraining model parameters. However, the reliability of LLM-based instant policies is limited by hallucinations, which produce outlier trajectories inconsistent with the demonstrations. This issue is further amplified in multimodal tasks, where multiple distinct yet equally valid strategies exist in human demonstrations. To address these challenges, we propose the Robust Instant Policy (RIP) framework, which improves reliability by robustly aggregating multiple trajectories sampled from an LLM. As a concrete instantiation, we introduce Student’s-t mixture model RIP (SMM-RIP), which captures trajectory multimodality via an SMM and extracts a robust representative trajectory using Student’s-t regression, effectively suppressing hallucinated outliers while preserving valid strategies. Experiments on 15 everyday manipulation tasks in both simulated and real-world environments show that SMM-RIP consistently outperforms state-of-the-art IL methods, particularly in low-data regimes. These results highlight the importance of robustness and flexible multimodal modeling for reliable LLM-based ICIL.
+            Imitation learning (IL) enables robots to acquire autonomous skills from human demonstrations. Recent in-context IL (ICIL) methods leverage off-the-shelf large language models (LLMs) as instant policies that infer task context and generate executable trajectories from only a few demonstrations, without retraining model parameters. However, the reliability of LLM-based instant policies is limited by hallucinations, which produce outlier trajectories inconsistent with the demonstrations. This issue is further amplified in multimodal tasks, where multiple distinct yet equally valid strategies exist in human demonstrations. To address these challenges, we propose the Robust Instant Policy (RIP) framework, which improves reliability by robustly aggregating multiple trajectories sampled from an LLM. As a concrete instantiation, we introduce Student’s-t mixture model RIP (SMM-RIP), which captures trajectory multimodality via an SMM-RIP and extracts a robust representative trajectory using Student’s-t regression, effectively suppressing hallucinated outliers while preserving valid strategies. Experiments on 15 everyday manipulation tasks in both simulated and real-world environments show that SMM-RIP consistently outperforms state-of-the-art IL methods, particularly in low-data regimes. These results highlight the importance of robustness and flexible multimodal modeling for reliable LLM-based ICIL.
           </p>
         </div>
       </div>
@@ -273,113 +273,14 @@
       </div>
       <!----------------------------------------------------------------->
       <br>
-      <h5 class="subtitle is-6"><strong>Simulation: Draw Triangle</strong></h5>
-      <div class="columns is-centered">
-        <!-- First and second columns: Image spanning two columns -->
-        <!-- First column: Image spanning two-thirds of the row -->
-        <div class="column is-two-thirds">
-          <p class="has-text-centered" style="color: #888;"><strong>Success condition: </strong> at the end of the episode, the triangle should be accurately drawn</p>
-          <br>
-          <div class="columns">
-            <div class="column">
-              <img src="../static/img/rip/simulation/draw_triangle_seed=14_num_demos=20_num_queries=10_SNN_2d_graph_gray_5.png" alt="MY ALT TEXT" style="width: 100%; height: auto;"/>
-            </div>
-            <div class="column">
-              <img src="../static/img/rip/simulation/draw_triangle_seed=14_num_demos=20_num_queries=10_SMM_2d_graph_tomato_5.png" alt="MY ALT TEXT" style="width: 100%; height: auto;"/>
-            </div>
-          </div>
-        </div>
-        <!-- Second column: 2x2 videos in one-third of the row -->
-        <div class="column is-one-third">
-          <div class="columns is-multiline">
-            <div class="column is-half">
-              <p class="has-text-centered" style="color: #888;">
-                <span style="color: #000;">KAT</span> <span style="color: #d32f2f;"><b>Failure</b></span>
-              </p>
-              <img src="../static/video/rip/simulation/drawing/KAT.gif" alt="Video 1" style="width: 100%; background: #222;">
-            </div>
-            <div class="column is-half">
-              <p class="has-text-centered" style="color: #888;">
-                <span style="color: #000;">GNN</span> <span style="color: #d32f2f;"><b>Failure</b></span>
-              </p>
-              <img src="../static/video/rip/simulation/drawing/GNN.gif" alt="Video 2" style="width: 100%; background: #222;">
-              
-            </div>
-            <div class="column is-half">
-              <p class="has-text-centered" style="color: #888;">
-                <span style="color: #000;">SNN</span> <span style="color: #d32f2f;"><b>Failure</b></span>
-              </p>
-              <img src="../static/video/rip/simulation/drawing/SNN.gif" alt="Video 3" style="width: 100%; background: #222;">
-            </div>
-            <div class="column is-half">
-              <p class="has-text-centered" style="color: #888;">
-                <span style="color: #000;">SMM</span> <span style="color: #0f1a81;"><b>Success</b></span>
-              </p>
-              <img src="../static/video/rip/simulation/drawing/SMM.gif" alt="Video 4" style="width: 100%; background: #222;">
-            </div>
-          </div>
-        </div>
-      </div>
-    <!----------------------------------------------------------------->
-    <br>
-      <h5 class="subtitle is-6"><strong>Simulation: Push Pull Cube</strong></h5>
-      <div class="columns is-centered">
-        <!-- First and second columns: Image spanning two columns -->
-        <!-- First column: Image spanning two-thirds of the row -->
-        <div class="column is-two-thirds">
-          <p class="has-text-centered" style="color: #888;"><strong>Success condition: </strong> at the end of the episode, the cube should be outside of the goal area</p>
-          <br>
-          <div class="columns">
-            <div class="column">
-              <img src="../static/img/rip/simulation/push_pull_cube_seed=40_num_demos=15_num_queries=10_SNN_2d_graph_gray_5.png" alt="MY ALT TEXT" style="width: 100%; height: auto;"/>
-            </div>
-            <div class="column">
-              <img src="../static/img/rip/simulation/push_pull_cube_seed=40_num_demos=15_num_queries=10_SMM_2d_graph_tomato_5.png" alt="MY ALT TEXT" style="width: 100%; height: auto;"/>
-            </div>
-          </div>
-        </div>
-        <!-- Second column: 2x2 videos in one-third of the row -->
-        <div class="column is-one-third">
-          <div class="columns is-multiline">
-            <div class="column is-half">
-              <p class="has-text-centered" style="color: #888;">
-                <span style="color: #000;">KAT</span> <span style="color: #d32f2f;"><b>Failure</b></span>
-              </p>
-              <img src="../static/video/rip/simulation/push_pull_cube/KAT.gif" alt="Video 1" style="width: 100%; background: #222;">
-            </div>
-            <div class="column is-half">
-              <p class="has-text-centered" style="color: #888;">
-                <span style="color: #000;">GNN</span> <span style="color: #d32f2f;"><b>Failure</b></span>
-              </p>
-              <img src="../static/video/rip/simulation/push_pull_cube/GNN.gif" alt="Video 2" style="width: 100%; background: #222;">
-              
-            </div>
-            <div class="column is-half">
-              <p class="has-text-centered" style="color: #888;">
-                <span style="color: #000;">SNN</span> <span style="color: #d32f2f;"><b>Failure</b></span>
-              </p>
-              <img src="../static/video/rip/simulation/push_pull_cube/SNN.gif" alt="Video 3" style="width: 100%; background: #222;">
-            </div>
-            <div class="column is-half">
-              <p class="has-text-centered" style="color: #888;">
-                <span style="color: #000;">SMM</span> <span style="color: #0f1a81;"><b>Success</b></span>
-              </p>
-              <img src="../static/video/rip/simulation/push_pull_cube/SMM.gif" alt="Video 4" style="width: 100%; background: #222;">
-            </div>
-          </div>
-        </div>
-      </div>
-      
-      <!----------------------------------------------------------------->
-      <br>
-      <h5 class="subtitle is-6"><strong>Simulation: Pick Banana</strong></h5>
+      <h5 class="subtitle is-6"><strong>Simulation Unimodal Task: Pick Banana</strong></h5>
       <div class="columns is-centered">
         <!-- First and second columns: Image spanning two columns -->
         <!-- First column: Image spanning two-thirds of the row -->
         <div class="column is-two-thirds">
           <p class="has-text-centered" style="color: #888;"><strong>Success condition: </strong> at the end of the episode, the banana is picked up</p>
           <br>
-          <div class="columns">
+          <div  class="columns is-gapless">
             <div class="column">
               <img src="../static/img/rip/simulation/pick_banana_seed=15_num_demos=10_num_queries=10_SNN_2d_graph_gray_5.png" alt="MY ALT TEXT" style="width: 100%; height: auto;"/>
             </div>
@@ -399,20 +300,20 @@
             </div>
             <div class="column is-half">
               <p class="has-text-centered" style="color: #888;">
-                <span style="color: #000;">GNN</span> <span style="color: #d32f2f;"><b>Failure</b></span>
+                <span style="color: #000;">GNN-RIP</span> <span style="color: #d32f2f;"><b>Failure</b></span>
               </p>
               <img src="../static/video/rip/simulation/pick_banana/GNN.gif" alt="Video 2" style="width: 100%; background: #222;">
               
             </div>
             <div class="column is-half">
               <p class="has-text-centered" style="color: #888;">
-                <span style="color: #000;">SNN</span> <span style="color: #0f1a81;"><b>Success</b></span>
+                <span style="color: #000;">SNN-RIP</span> <span style="color: #0f1a81;"><b>Success</b></span>
               </p>
               <img src="../static/video/rip/simulation/pick_banana/SNN.gif" alt="Video 3" style="width: 100%; background: #222;">
             </div>
             <div class="column is-half">
               <p class="has-text-centered" style="color: #888;">
-                <span style="color: #000;">SMM</span> <span style="color: #0f1a81;"><b>Success</b></span>
+                <span style="color: #000;">SMM-RIP</span> <span style="color: #0f1a81;"><b>Success</b></span>
               </p>
               <img src="../static/video/rip/simulation/pick_banana/SMM.gif" alt="Video 4" style="width: 100%; background: #222;">
               
@@ -422,14 +323,14 @@
       </div>
 
       <br>
-      <h5 class="subtitle is-6"><strong>Simulation: Push Cube</strong></h5>
+      <h5 class="subtitle is-6"><strong>Simulation Unimodal Task: Push Cube</strong></h5>
       <div class="columns is-centered">
         <!-- First and second columns: Image spanning two columns -->
         <!-- First column: Image spanning two-thirds of the row -->
         <div class="column is-two-thirds">
           <p class="has-text-centered" style="color: #888;"><strong>Success condition: </strong> at the end of the episode, the cube should be pushed out to the goal circle</p>
           <br>
-          <div class="columns">
+          <div  class="columns is-gapless">
             <div class="column">
               <img src="../static/img/rip/simulation/push_cube_seed=39_num_demos=3_num_queries=10_SNN_2d_graph_gray_5.png" alt="MY ALT TEXT" style="width: 100%; height: auto;"/>
             </div>
@@ -449,19 +350,19 @@
             </div>
             <div class="column is-half">
               <p class="has-text-centered" style="color: #888;">
-                <span style="color: #000;">GNN</span> <span style="color: #d32f2f;"><b>Failure</b></span>
+                <span style="color: #000;">GNN-RIP</span> <span style="color: #d32f2f;"><b>Failure</b></span>
               </p>
               <img src="../static/video/rip/simulation/push_cube/GNN.gif" alt="Video 2" style="width: 100%; background: #222;">
             </div>
             <div class="column is-half">
               <p class="has-text-centered" style="color: #888;">
-                <span style="color: #000;">SNN</span> <span style="color: #0f1a81;"><b>Success</b></span>
+                <span style="color: #000;">SNN-RIP</span> <span style="color: #0f1a81;"><b>Success</b></span>
               </p>
               <img src="../static/video/rip/simulation/push_cube/SNN.gif" alt="Video 3" style="width: 100%; background: #222;">
             </div>
             <div class="column is-half">
               <p class="has-text-centered" style="color: #888;">
-                <span style="color: #000;">SMM</span> <span style="color: #0f1a81;"><b>Success</b></span>
+                <span style="color: #000;">SMM-RIP</span> <span style="color: #0f1a81;"><b>Success</b></span>
               </p>
               <img src="../static/video/rip/simulation/push_cube/SMM.gif" alt="Video 4" style="width: 100%; background: #222;">
             </div>
@@ -470,14 +371,14 @@
       </div>
 
       <br>
-      <h5 class="subtitle is-6"><strong>Simulation: Open Drawer</strong></h5>
+      <h5 class="subtitle is-6"><strong>Simulation Unimodal Task: Open Drawer</strong></h5>
       <div class="columns is-centered">
         <!-- First and second columns: Image spanning two columns -->
         <!-- First column: Image spanning two-thirds of the row -->
         <div class="column is-two-thirds">
           <p class="has-text-centered" style="color: #888;"><strong>Success condition: </strong>  at the end of the episode, the drawer is opened</p>
           <br>
-          <div class="columns">
+          <div  class="columns is-gapless">
             <div class="column">
               <img src="../static/img/rip/simulation/drawer_cabinet_seed=32_num_demos=10_num_queries=10_SNN_2d_graph_gray_5.png" alt="MY ALT TEXT" style="width: 100%; height: auto;"/>
             </div>
@@ -497,20 +398,20 @@
             </div>
             <div class="column is-half">
               <p class="has-text-centered" style="color: #888;">
-                <span style="color: #000;">GNN</span> <span style="color: #d32f2f;"><b>Failure</b></span>
+                <span style="color: #000;">GNN-RIP</span> <span style="color: #d32f2f;"><b>Failure</b></span>
               </p>
               <img src="../static/video/rip/simulation/open_drawer/GNN.gif" alt="Video 2" style="width: 100%; background: #222;">
               
             </div>
             <div class="column is-half">
               <p class="has-text-centered" style="color: #888;">
-                <span style="color: #000;">SNN</span> <span style="color: #0f1a81;"><b>Success</b></span>
+                <span style="color: #000;">SNN-RIP</span> <span style="color: #0f1a81;"><b>Success</b></span>
               </p>
               <img src="../static/video/rip/simulation/open_drawer/SNN.gif" alt="Video 3" style="width: 100%; background: #222;">
             </div>
             <div class="column is-half">
               <p class="has-text-centered" style="color: #888;">
-                <span style="color: #000;">SMM</span> <span style="color: #0f1a81;"><b>Success</b></span>
+                <span style="color: #000;">SMM-RIP</span> <span style="color: #0f1a81;"><b>Success</b></span>
               </p>
               <img src="../static/video/rip/simulation/open_drawer/SMM.gif" alt="Video 4" style="width: 100%; background: #222;">
               
@@ -520,14 +421,14 @@
       </div>
 
       <br>
-      <h5 class="subtitle is-6"><strong>Simulation: Close Cabinet</strong></h5>
+      <h5 class="subtitle is-6"><strong>Simulation Unimodal Task: Close Cabinet</strong></h5>
       <div class="columns is-centered">
         <!-- First and second columns: Image spanning two columns -->
         <!-- First column: Image spanning two-thirds of the row -->
         <div class="column is-two-thirds">
           <p class="has-text-centered" style="color: #888;"><strong>Success condition: </strong>  at the end of the episode, the cabinet is closed completely</p>
           <br>
-          <div class="columns">
+          <div  class="columns is-gapless">
             <div class="column">
               <img src="../static/img/rip/simulation/close_cabinet_door_seed=38_num_demos=5_num_queries=10_SNN_2d_graph_gray_5.png" alt="MY ALT TEXT" style="width: 100%; height: auto;"/>
             </div>
@@ -547,20 +448,20 @@
             </div>
             <div class="column is-half">
               <p class="has-text-centered" style="color: #888;">
-                <span style="color: #000;">GNN</span> <span style="color: #d32f2f;"><b>Failure</b></span>
+                <span style="color: #000;">GNN-RIP</span> <span style="color: #d32f2f;"><b>Failure</b></span>
               </p>
               <img src="../static/video/rip/simulation/close_cabinet/GNN.gif" alt="Video 2" style="width: 100%; background: #222;">
               
             </div>
             <div class="column is-half">
               <p class="has-text-centered" style="color: #888;">
-                <span style="color: #000;">SNN</span> <span style="color: #0f1a81;"><b>Success</b></span>
+                <span style="color: #000;">SNN-RIP</span> <span style="color: #0f1a81;"><b>Success</b></span>
               </p>
               <img src="../static/video/rip/simulation/close_cabinet/SNN.gif" alt="Video 3" style="width: 100%; background: #222;">
             </div>
             <div class="column is-half">
               <p class="has-text-centered" style="color: #888;">
-                <span style="color: #000;">SMM</span> <span style="color: #0f1a81;"><b>Success</b></span>
+                <span style="color: #000;">SMM-RIP</span> <span style="color: #0f1a81;"><b>Success</b></span>
               </p>
               <img src="../static/video/rip/simulation/close_cabinet/SMM.gif" alt="Video 4" style="width: 100%; background: #222;">
             </div>
@@ -569,21 +470,27 @@
       </div>
 
       <br>
-      <h5 class="subtitle is-6"><strong>Simulation: Turn Faucet</strong></h5>
+      <h5 class="subtitle is-6"><strong>Simulation Unimodal Task: Turn Faucet</strong></h5>
       <div class="columns is-centered">
         <!-- First and second columns: Image spanning two columns -->
         <!-- First column: Image spanning two-thirds of the row -->
         <div class="column is-two-thirds">
           <p class="has-text-centered" style="color: #888;"><strong>Success condition: </strong> at the end of the episode, the faucet is rotated</p>
           <br>
-          <div class="columns">
-            <div class="column">
-              <img src="../static/img/rip/simulation/turn_faucet_seed=18_num_demos=10_num_queries=10_SNN_2d_graph_gray_5.png" alt="MY ALT TEXT" style="width: 100%; height: auto;"/>
+            <!-- 
+              The "gap" parameter in the inline style of the <div> element sets the spacing between child elements within the flex or grid container.
+              In this case, 'gap: -0.5rem;' attempts to set a negative gap of -0.5rem, which is not standard and may not be supported in all browsers.
+              Normally, "gap" should be a positive value to create space between columns or rows.
+              Negative values may lead to unexpected layout behavior or be ignored by the browser.
+            -->
+            <div class="columns is-gapless">
+              <div class="column">
+                <img src="../static/img/rip/simulation/turn_faucet_seed=18_num_demos=10_num_queries=10_SNN_2d_graph_gray_5.png" alt="MY ALT TEXT" style="width: 100%; height: auto;"/>
+              </div>
+              <div class="column">
+                <img src="../static/img/rip/simulation/turn_faucet_seed=18_num_demos=10_num_queries=10_SMM_2d_graph_tomato_5.png" alt="MY ALT TEXT" style="width: 100%; height: auto;"/>
+              </div>
             </div>
-            <div class="column">
-              <img src="../static/img/rip/simulation/turn_faucet_seed=18_num_demos=10_num_queries=10_SMM_2d_graph_tomato_5.png" alt="MY ALT TEXT" style="width: 100%; height: auto;"/>
-            </div>
-          </div>
         </div>
         <!-- Second column: 2x2 videos in one-third of the row -->
         <div class="column is-one-third">
@@ -596,26 +503,122 @@
             </div>
             <div class="column is-half">
               <p class="has-text-centered" style="color: #888;">
-                <span style="color: #000;">GNN</span> <span style="color: #d32f2f;"><b>Failure</b></span>
+                <span style="color: #000;">GNN-RIP</span> <span style="color: #d32f2f;"><b>Failure</b></span>
               </p>
               <img src="../static/video/rip/simulation/turn_faucet/GNN.gif" alt="Video 2" style="width: 100%; background: #222;">
             </div>
             <div class="column is-half">
               <p class="has-text-centered" style="color: #888;">
-                <span style="color: #000;">SNN</span> <span style="color: #0f1a81;"><b>Success</b></span>
+                <span style="color: #000;">SNN-RIP</span> <span style="color: #0f1a81;"><b>Success</b></span>
               </p>
               <img src="../static/video/rip/simulation/turn_faucet/SNN.gif" alt="Video 3" style="width: 100%; background: #222;">
             </div>
             <div class="column is-half">
               <p class="has-text-centered" style="color: #888;">
-                <span style="color: #000;">SMM</span> <span style="color: #0f1a81;"><b>Success</b></span>
+                <span style="color: #000;">SMM-RIP</span> <span style="color: #0f1a81;"><b>Success</b></span>
               </p>
               <img src="../static/video/rip/simulation/turn_faucet/SMM.gif" alt="Video 4" style="width: 100%; background: #222;">
             </div>
           </div>
         </div>
       </div>
-
+      <br>
+      <h5 class="subtitle is-6"><strong>Simulation Multimodal Task: Draw Triangle</strong></h5>
+      <div class="columns is-centered">
+        <!-- First and second columns: Image spanning two columns -->
+        <!-- First column: Image spanning two-thirds of the row -->
+        <div class="column is-two-thirds">
+          <p class="has-text-centered" style="color: #888;"><strong>Success condition: </strong> at the end of the episode, the triangle should be accurately drawn</p>
+          <br>
+          <div  class="columns is-gapless">
+            <div class="column">
+              <img src="../static/img/rip/simulation/draw_triangle_seed=14_num_demos=20_num_queries=10_SNN_2d_graph_gray_5.png" alt="MY ALT TEXT" style="width: 100%; height: auto;"/>
+            </div>
+            <div class="column">
+              <img src="../static/img/rip/simulation/draw_triangle_seed=14_num_demos=20_num_queries=10_SMM_2d_graph_tomato_5.png" alt="MY ALT TEXT" style="width: 100%; height: auto;"/>
+            </div>
+          </div>
+        </div>
+        <!-- Second column: 2x2 videos in one-third of the row -->
+        <div class="column is-one-third">
+          <div class="columns is-multiline">
+            <div class="column is-half">
+              <p class="has-text-centered" style="color: #888;">
+                <span style="color: #000;">KAT</span> <span style="color: #d32f2f;"><b>Failure</b></span>
+              </p>
+              <img src="../static/video/rip/simulation/drawing/KAT.gif" alt="Video 1" style="width: 100%; background: #222;">
+            </div>
+            <div class="column is-half">
+              <p class="has-text-centered" style="color: #888;">
+                <span style="color: #000;">GNN-RIP</span> <span style="color: #d32f2f;"><b>Failure</b></span>
+              </p>
+              <img src="../static/video/rip/simulation/drawing/GNN.gif" alt="Video 2" style="width: 100%; background: #222;">
+              
+            </div>
+            <div class="column is-half">
+              <p class="has-text-centered" style="color: #888;">
+                <span style="color: #000;">SNN-RIP</span> <span style="color: #d32f2f;"><b>Failure</b></span>
+              </p>
+              <img src="../static/video/rip/simulation/drawing/SNN.gif" alt="Video 3" style="width: 100%; background: #222;">
+            </div>
+            <div class="column is-half">
+              <p class="has-text-centered" style="color: #888;">
+                <span style="color: #000;">SMM-RIP</span> <span style="color: #0f1a81;"><b>Success</b></span>
+              </p>
+              <img src="../static/video/rip/simulation/drawing/SMM.gif" alt="Video 4" style="width: 100%; background: #222;">
+            </div>
+          </div>
+        </div>
+      </div>
+    <!----------------------------------------------------------------->
+    <br>
+      <h5 class="subtitle is-6"><strong>Simulation Multimodal Task: Push Pull Cube</strong></h5>
+      <div class="columns is-centered">
+        <!-- First and second columns: Image spanning two columns -->
+        <!-- First column: Image spanning two-thirds of the row -->
+        <div class="column is-two-thirds">
+          <p class="has-text-centered" style="color: #888;"><strong>Success condition: </strong> at the end of the episode, the cube should be outside of the goal area</p>
+          <br>
+          <div class="columns is-gapless">
+            <div class="column">
+              <img src="../static/img/rip/simulation/push_pull_cube_seed=40_num_demos=15_num_queries=10_SNN_2d_graph_gray_5.png" alt="MY ALT TEXT" style="width: 120%; height: auto;"/>
+            </div>
+            <div class="column">
+              <img src="../static/img/rip/simulation/push_pull_cube_seed=40_num_demos=15_num_queries=10_SMM_2d_graph_tomato_5.png" alt="MY ALT TEXT" style="width: 120%; height: auto;"/>
+            </div>
+          </div>
+        </div>
+        <!-- Second column: 2x2 videos in one-third of the row -->
+        <div class="column is-one-third">
+          <div class="columns is-multiline">
+            <div class="column is-half">
+              <p class="has-text-centered" style="color: #888;">
+                <span style="color: #000;">KAT</span> <span style="color: #d32f2f;"><b>Failure</b></span>
+              </p>
+              <img src="../static/video/rip/simulation/push_pull_cube/KAT.gif" alt="Video 1" style="width: 100%; background: #222;">
+            </div>
+            <div class="column is-half">
+              <p class="has-text-centered" style="color: #888;">
+                <span style="color: #000;">GNN-RIP</span> <span style="color: #d32f2f;"><b>Failure</b></span>
+              </p>
+              <img src="../static/video/rip/simulation/push_pull_cube/GNN.gif" alt="Video 2" style="width: 100%; background: #222;">
+              
+            </div>
+            <div class="column is-half">
+              <p class="has-text-centered" style="color: #888;">
+                <span style="color: #000;">SNN-RIP</span> <span style="color: #d32f2f;"><b>Failure</b></span>
+              </p>
+              <img src="../static/video/rip/simulation/push_pull_cube/SNN.gif" alt="Video 3" style="width: 100%; background: #222;">
+            </div>
+            <div class="column is-half">
+              <p class="has-text-centered" style="color: #888;">
+                <span style="color: #000;">SMM-RIP</span> <span style="color: #0f1a81;"><b>Success</b></span>
+              </p>
+              <img src="../static/video/rip/simulation/push_pull_cube/SMM.gif" alt="Video 4" style="width: 100%; background: #222;">
+            </div>
+          </div>
+        </div>
+      </div>
       <!----------------------------------------------------------------->
       <!--- Real world evaluation --->
       <h4 class="subtitle is-6" style="color: #1976d2;"><b>Real-world Evaluation</b></h4>
@@ -635,7 +638,7 @@
           <img src="../static/img/rip/real_tasks.png" alt="MY ALT TEXT" style="width: 100%; height: auto;"/>
         </div>
       </div>
-      <h5 class="subtitle is-6"><strong>Real: Pick Banana</strong></h5>
+      <h5 class="subtitle is-6"><strong>Real Unimodal Task: Pick Banana</strong></h5>
       <p><strong>Success condition:</strong> at the end of the episode, the banana is picked up</p>
       <div class="columns is-centered">
         <div class="column">
@@ -646,24 +649,24 @@
         </div>
         <div class="column">
           <p class="has-text-centered" style="color: #888;">
-            <span style="color: #000;">GNN </span><span style="color: #d32f2f;"><b>Failure</b></span>
+            <span style="color: #000;">GNN-RIP </span><span style="color: #d32f2f;"><b>Failure</b></span>
           </p>
-          <img src="../static/video/rip/real_world/pick_banana/GNN.gif" alt="GNN" style="width: 100%; background: #222;">
+          <img src="../static/video/rip/real_world/pick_banana/GNN.gif" alt="GNN-RIP" style="width: 100%; background: #222;">
         </div>
         <div class="column">
           <p class="has-text-centered" style="color: #888;">
-            <span style="color: #000;">SNN </span><span style="color: #0f1a81;"><b>Success</b></span>
+            <span style="color: #000;">SNN-RIP </span><span style="color: #0f1a81;"><b>Success</b></span>
           </p>
-          <img src="../static/video/rip/real_world/pick_banana/SNN.gif" alt="SNN" style="width: 100%; background: #222;">
+          <img src="../static/video/rip/real_world/pick_banana/SNN.gif" alt="SNN-RIP" style="width: 100%; background: #222;">
         </div>
         <div class="column">
           <p class="has-text-centered" style="color: #888;">
-            <span style="color: #000;">SMM </span><span style="color: #0f1a81;"><b>Success</b></span>
+            <span style="color: #000;">SMM-RIP </span><span style="color: #0f1a81;"><b>Success</b></span>
           </p>
-          <img src="../static/video/rip/real_world/pick_banana/SMM.gif" alt="SMM" style="width: 100%; background: #222;">
+          <img src="../static/video/rip/real_world/pick_banana/SMM.gif" alt="SMM-RIP" style="width: 100%; background: #222;">
         </div>
       </div>
-      <h5 class="subtitle is-6"><strong>Real: Hanger</strong></h5>
+      <h5 class="subtitle is-6"><strong>Real Unimodal Task: Hanger</strong></h5>
       <p><strong>Success condition:</strong> at the end of the episode, the hanger is hung on the stand</p>
       <div class="columns is-centered">
         <div class="column">
@@ -674,24 +677,24 @@
         </div>
         <div class="column">
           <p class="has-text-centered" style="color: #888;">
-            <span style="color: #000;">GNN </span><span style="color: #d32f2f;"><b>Failure</b></span>
+            <span style="color: #000;">GNN-RIP </span><span style="color: #d32f2f;"><b>Failure</b></span>
           </p>
-          <img src="../static/video/rip/real_world/hanger/GNN.gif" alt="GNN" style="width: 100%; background: #222;">
+          <img src="../static/video/rip/real_world/hanger/GNN.gif" alt="GNN-RIP" style="width: 100%; background: #222;">
         </div>
         <div class="column">
           <p class="has-text-centered" style="color: #888;">
-            <span style="color: #000;">SNN </span><span style="color: #0f1a81;"><b>Success</b></span>
+            <span style="color: #000;">SNN-RIP </span><span style="color: #0f1a81;"><b>Success</b></span>
           </p>
-          <img src="../static/video/rip/real_world/hanger/SNN.gif" alt="SNN" style="width: 100%; background: #222;">
+          <img src="../static/video/rip/real_world/hanger/SNN.gif" alt="SNN-RIP" style="width: 100%; background: #222;">
         </div>
         <div class="column">
           <p class="has-text-centered" style="color: #888;">
-            <span style="color: #000;">SMM </span><span style="color: #0f1a81;"><b>Success</b></span>
+            <span style="color: #000;">SMM-RIP </span><span style="color: #0f1a81;"><b>Success</b></span>
           </p>
-          <img src="../static/video/rip/real_world/hanger/SMM.gif" alt="SMM" style="width: 100%; background: #222;">
+          <img src="../static/video/rip/real_world/hanger/SMM.gif" alt="SMM-RIP" style="width: 100%; background: #222;">
         </div>
       </div>
-      <h5 class="subtitle is-6"><strong>Real: Cup Upright</strong></h5>
+      <h5 class="subtitle is-6"><strong>Real Unimodal Task: Cup Upright</strong></h5>
       <p><strong>Success condition:</strong> at the end of the episode, the cup is vertically placed on the table</p>
       <div class="columns is-centered">
         <div class="column">
@@ -702,24 +705,24 @@
         </div>
         <div class="column">
           <p class="has-text-centered" style="color: #888;">
-            <span style="color: #000;">GNN </span><span style="color: #d32f2f;"><b>Failure</b></span>
+            <span style="color: #000;">GNN-RIP </span><span style="color: #d32f2f;"><b>Failure</b></span>
           </p>
-          <img src="../static/video/rip/real_world/cup_upright/GNN.gif" alt="GNN" style="width: 100%; background: #222;">
+          <img src="../static/video/rip/real_world/cup_upright/GNN.gif" alt="GNN-RIP" style="width: 100%; background: #222;">
         </div>
         <div class="column">
           <p class="has-text-centered" style="color: #888;">
-            <span style="color: #000;">SNN </span><span style="color: #0f1a81;"><b>Success</b></span>
+            <span style="color: #000;">SNN-RIP </span><span style="color: #0f1a81;"><b>Success</b></span>
           </p>
-          <img src="../static/video/rip/real_world/cup_upright/SNN.gif" alt="SNN" style="width: 100%; background: #222;">
+          <img src="../static/video/rip/real_world/cup_upright/SNN.gif" alt="SNN-RIP" style="width: 100%; background: #222;">
         </div>
         <div class="column">
           <p class="has-text-centered" style="color: #888;">
-            <span style="color: #000;">SMM </span><span style="color: #0f1a81;"><b>Success</b></span>
+            <span style="color: #000;">SMM-RIP </span><span style="color: #0f1a81;"><b>Success</b></span>
           </p>
-          <img src="../static/video/rip/real_world/cup_upright/SMM.gif" alt="SMM" style="width: 100%; background: #222;">
+          <img src="../static/video/rip/real_world/cup_upright/SMM.gif" alt="SMM-RIP" style="width: 100%; background: #222;">
         </div>
       </div>
-      <h5 class="subtitle is-6"><strong>Real: Sweep</strong></h5>
+      <h5 class="subtitle is-6"><strong>Real Unimodal Task: Sweep</strong></h5>
       <p><strong>Success condition:</strong> at the end of the episode, the dust (cubes) is on the dust pan</p>
       <div class="columns is-centered">
         <div class="column">
@@ -730,38 +733,38 @@
         </div>
         <div class="column">
           <p class="has-text-centered" style="color: #888;">
-            <span style="color: #000;">GNN </span><span style="color: #d32f2f;"><b>Failure</b></span>
+            <span style="color: #000;">GNN-RIP </span><span style="color: #d32f2f;"><b>Failure</b></span>
           </p>
-          <img src="../static/video/rip/real_world/sweep/GNN.gif" alt="GNN" style="width: 100%; background: #222;">
+          <img src="../static/video/rip/real_world/sweep/GNN.gif" alt="GNN-RIP" style="width: 100%; background: #222;">
         </div>
         <div class="column">
           <p class="has-text-centered" style="color: #888;">
-            <span style="color: #000;">SNN </span><span style="color: #0f1a81;"><b>Success</b></span>
+            <span style="color: #000;">SNN-RIP </span><span style="color: #0f1a81;"><b>Success</b></span>
           </p>
-          <img src="../static/video/rip/real_world/sweep/SNN.gif" alt="SNN" style="width: 100%; background: #222;">
+          <img src="../static/video/rip/real_world/sweep/SNN.gif" alt="SNN-RIP" style="width: 100%; background: #222;">
         </div>
       </div>
       <div class="columns is-centered">
         <div class="column">
           <p class="has-text-centered" style="color: #888;">
-            <span style="color: #000;">SMM </span><span style="color: #0f1a81;"><b>Success</b></span>
+            <span style="color: #000;">SMM-RIP </span><span style="color: #0f1a81;"><b>Success</b></span>
           </p>
-          <img src="../static/video/rip/real_world/sweep/SMM.gif" alt="SMM" style="width: 100%; background: #222;">
+          <img src="../static/video/rip/real_world/sweep/SMM.gif" alt="SMM-RIP" style="width: 100%; background: #222;">
         </div>
         <div class="column">
           <p class="has-text-centered" style="color: #888;">
-            <span style="color: #000;">SMM </span><span style="color: #0f1a81;"><b>Success</b></span>
+            <span style="color: #000;">SMM-RIP </span><span style="color: #0f1a81;"><b>Success</b></span>
           </p>
-          <img src="../static/video/rip/real_world/sweep/SMM_2.gif" alt="SMM" style="width: 100%; background: #222;">
+          <img src="../static/video/rip/real_world/sweep/SMM_2.gif" alt="SMM-RIP" style="width: 100%; background: #222;">
         </div>
         <div class="column">
           <p class="has-text-centered" style="color: #888;">
-            <span style="color: #000;">SMM </span><span style="color: #0f1a81;"><b>Success</b></span>
+            <span style="color: #000;">SMM-RIP </span><span style="color: #0f1a81;"><b>Success</b></span>
           </p>
-          <img src="../static/video/rip/real_world/sweep/SMM_3.gif" alt="SMM" style="width: 100%; background: #222;">
+          <img src="../static/video/rip/real_world/sweep/SMM_3.gif" alt="SMM-RIP" style="width: 100%; background: #222;">
         </div>
       </div>
-      <h5 class="subtitle is-6"><strong>Real: Pick and Place</strong></h5>
+      <h5 class="subtitle is-6"><strong>Real Unimodal Task: Pick and Place</strong></h5>
       <p><strong>Success condition:</strong> at the end of the episode, the bottle is in the bowl</p>
       <div class="columns is-centered">
         <div class="column">
@@ -772,38 +775,38 @@
         </div>
         <div class="column">
           <p class="has-text-centered" style="color: #888;">
-            <span style="color: #000;">GNN </span><span style="color: #d32f2f;"><b>Failure</b></span>
+            <span style="color: #000;">GNN-RIP </span><span style="color: #d32f2f;"><b>Failure</b></span>
           </p>
-          <img src="../static/video/rip/real_world/pick_and_place/GNN.gif" alt="GNN" style="width: 100%; background: #222;">
+          <img src="../static/video/rip/real_world/pick_and_place/GNN.gif" alt="GNN-RIP" style="width: 100%; background: #222;">
         </div>
         <div class="column">
           <p class="has-text-centered" style="color: #888;">
-            <span style="color: #000;">SNN </span><span style="color: #0f1a81;"><b>Success</b></span>
+            <span style="color: #000;">SNN-RIP </span><span style="color: #0f1a81;"><b>Success</b></span>
           </p>
-          <img src="../static/video/rip/real_world/pick_and_place/SNN.gif" alt="SNN" style="width: 100%; background: #222;">
+          <img src="../static/video/rip/real_world/pick_and_place/SNN.gif" alt="SNN-RIP" style="width: 100%; background: #222;">
         </div>
       </div>
       <div class="columns is-centered">
         <div class="column">
           <p class="has-text-centered" style="color: #888;">
-            <span style="color: #000;">SMM </span><span style="color: #0f1a81;"><b>Success</b></span>
+            <span style="color: #000;">SMM-RIP </span><span style="color: #0f1a81;"><b>Success</b></span>
           </p>
-          <img src="../static/video/rip/real_world/pick_and_place/SMM.gif" alt="SMM" style="width: 100%; background: #222;">
+          <img src="../static/video/rip/real_world/pick_and_place/SMM.gif" alt="SMM-RIP" style="width: 100%; background: #222;">
         </div>
         <div class="column">
           <p class="has-text-centered" style="color: #888;">
-            <span style="color: #000;">SMM </span><span style="color: #0f1a81;"><b>Success</b></span>
+            <span style="color: #000;">SMM-RIP </span><span style="color: #0f1a81;"><b>Success</b></span>
           </p>
-          <img src="../static/video/rip/real_world/pick_and_place/SMM_2.gif" alt="SMM" style="width: 100%; background: #222;">
+          <img src="../static/video/rip/real_world/pick_and_place/SMM_2.gif" alt="SMM-RIP" style="width: 100%; background: #222;">
         </div>
         <div class="column">
           <p class="has-text-centered" style="color: #888;">
-            <span style="color: #000;">SMM </span><span style="color: #0f1a81;"><b>Success</b></span>
+            <span style="color: #000;">SMM-RIP </span><span style="color: #0f1a81;"><b>Success</b></span>
           </p>
-          <img src="../static/video/rip/real_world/pick_and_place/SMM_3.gif" alt="SMM" style="width: 100%; background: #222;">
+          <img src="../static/video/rip/real_world/pick_and_place/SMM_3.gif" alt="SMM-RIP" style="width: 100%; background: #222;">
         </div>
       </div>
-      <h5 class="subtitle is-6"><strong>Real: Wipe Plate</strong></h5>
+      <h5 class="subtitle is-6"><strong>Real Multimodal Task: Wipe Plate</strong></h5>
       <p><strong>Success condition:</strong> At the end of the episode, the sponge should have wiped along the entire contour of the plate, maintaining contact throughout, without significantly moving the plate</p>
       <div class="columns is-centered">
         <div class="column">
@@ -814,36 +817,36 @@
         </div>
         <div class="column">
           <p class="has-text-centered" style="color: #888;">
-            <span style="color: #000;">GNN </span><span style="color: #d32f2f;"><b>Failure</b></span>
+            <span style="color: #000;">GNN-RIP </span><span style="color: #d32f2f;"><b>Failure</b></span>
           </p>
-          <img src="../static/video/rip/real_world/wipe_plate/GNN.gif" alt="GNN" style="width: 100%; background: #222;">
+          <img src="../static/video/rip/real_world/wipe_plate/GNN.gif" alt="GNN-RIP" style="width: 100%; background: #222;">
         </div>
         <div class="column">
           <p class="has-text-centered" style="color: #888;">
-            <span style="color: #000;">SNN </span><span style="color: #d32f2f;"><b>Failure</b></span>
+            <span style="color: #000;">SNN-RIP </span><span style="color: #d32f2f;"><b>Failure</b></span>
           </p>
-          <img src="../static/video/rip/real_world/wipe_plate/SNN.gif" alt="SNN" style="width: 100%; background: #222;">
+          <img src="../static/video/rip/real_world/wipe_plate/SNN.gif" alt="SNN-RIP" style="width: 100%; background: #222;">
         </div>
       </div>
       <div class="columns is-centered">
         <div class="column">
           <p class="has-text-centered" style="color: #888;">
-            <span style="color: #000;">SMM </span><span style="color: #0f1a81;"><b>Success</b></span>
+            <span style="color: #000;">SMM-RIP </span><span style="color: #0f1a81;"><b>Success</b></span>
           </p>
           <div style="text-align: center;">
-            <img src="../static/video/rip/real_world/wipe_plate/SMM.gif" alt="SMM" style="width: 66%; background: #222;">
+            <img src="../static/video/rip/real_world/wipe_plate/SMM.gif" alt="SMM-RIP" style="width: 66%; background: #222;">
           </div>
         </div>
         <div class="column">
           <p class="has-text-centered" style="color: #888;">
-            <span style="color: #000;">SMM </span><span style="color: #0f1a81;"><b>Success</b></span>
+            <span style="color: #000;">SMM-RIP </span><span style="color: #0f1a81;"><b>Success</b></span>
           </p>
           <div style="text-align: center;">
-            <img src="../static/video/rip/real_world/wipe_plate/SMM_2.gif" alt="SMM" style="width: 66%; background: #222;">
+            <img src="../static/video/rip/real_world/wipe_plate/SMM_2.gif" alt="SMM-RIP" style="width: 66%; background: #222;">
           </div>
         </div>
       </div>
-      <h5 class="subtitle is-6"><strong>Real: Pick Hanger</strong></h5>
+      <h5 class="subtitle is-6"><strong>Real Multimodal Task: Pick Hanger</strong></h5>
       <p><strong>Success condition:</strong> At the end of the episode, the hanger should be pick up by any side</p>
       <div class="columns is-centered">
         <div class="column">
@@ -854,36 +857,36 @@
         </div>
         <div class="column">
           <p class="has-text-centered" style="color: #888;">
-            <span style="color: #000;">GNN </span><span style="color: #d32f2f;"><b>Failure</b></span>
+            <span style="color: #000;">GNN-RIP </span><span style="color: #d32f2f;"><b>Failure</b></span>
           </p>
-          <img src="../static/video/rip/real_world/pick_hanger/GNN.gif" alt="GNN" style="width: 100%; background: #222;">
+          <img src="../static/video/rip/real_world/pick_hanger/GNN.gif" alt="GNN-RIP" style="width: 100%; background: #222;">
         </div>
         <div class="column">
           <p class="has-text-centered" style="color: #888;">
-            <span style="color: #000;">SNN </span><span style="color: #d32f2f;"><b>Failure</b></span>
+            <span style="color: #000;">SNN-RIP </span><span style="color: #d32f2f;"><b>Failure</b></span>
           </p>
-          <img src="../static/video/rip/real_world/pick_hanger/SNN.gif" alt="SNN" style="width: 100%; background: #222;">
+          <img src="../static/video/rip/real_world/pick_hanger/SNN.gif" alt="SNN-RIP" style="width: 100%; background: #222;">
         </div>
       </div>
       <div class="columns is-centered">
         <div class="column">
           <p class="has-text-centered" style="color: #888;">
-            <span style="color: #000;">SMM </span><span style="color: #0f1a81;"><b>Success</b></span>
+            <span style="color: #000;">SMM-RIP </span><span style="color: #0f1a81;"><b>Success</b></span>
           </p>
           <div style="text-align: center;">
-            <img src="../static/video/rip/real_world/pick_hanger/SMM.gif" alt="SMM" style="width: 66%; background: #222;">
+            <img src="../static/video/rip/real_world/pick_hanger/SMM.gif" alt="SMM-RIP" style="width: 66%; background: #222;">
           </div>
         </div>
         <div class="column">
           <p class="has-text-centered" style="color: #888;">
-            <span style="color: #000;">SMM </span><span style="color: #0f1a81;"><b>Success</b></span>
+            <span style="color: #000;">SMM-RIP </span><span style="color: #0f1a81;"><b>Success</b></span>
           </p>
           <div style="text-align: center;">
-            <img src="../static/video/rip/real_world/pick_hanger/SMM_2.gif" alt="SMM" style="width: 66%; background: #222;">
+            <img src="../static/video/rip/real_world/pick_hanger/SMM_2.gif" alt="SMM-RIP" style="width: 66%; background: #222;">
           </div>
         </div>
       </div>
-      <h5 class="subtitle is-6"><strong>Real: Place Cube</strong></h5>
+      <h5 class="subtitle is-6"><strong>Real Multimodal Task: Place Cube</strong></h5>
       <p><strong>Success condition:</strong> At the end of the episode, the cube should be placed in any cup</p>
       <div class="columns is-centered">
         <div class="column">
@@ -894,32 +897,32 @@
         </div>
         <div class="column">
           <p class="has-text-centered" style="color: #888;">
-            <span style="color: #000;">GNN </span><span style="color: #d32f2f;"><b>Failure</b></span>
+            <span style="color: #000;">GNN-RIP </span><span style="color: #d32f2f;"><b>Failure</b></span>
           </p>
-          <img src="../static/video/rip/real_world/place_cube/GNN.gif" alt="GNN" style="width: 100%; background: #222;">
+          <img src="../static/video/rip/real_world/place_cube/GNN.gif" alt="GNN-RIP" style="width: 100%; background: #222;">
         </div>
         <div class="column">
           <p class="has-text-centered" style="color: #888;">
-            <span style="color: #000;">SNN </span><span style="color: #d32f2f;"><b>Failure</b></span>
+            <span style="color: #000;">SNN-RIP </span><span style="color: #d32f2f;"><b>Failure</b></span>
           </p>
-          <img src="../static/video/rip/real_world/place_cube/SNN.gif" alt="SNN" style="width: 100%; background: #222;">
+          <img src="../static/video/rip/real_world/place_cube/SNN.gif" alt="SNN-RIP" style="width: 100%; background: #222;">
         </div>
       </div>
       <div class="columns is-centered">
         <div class="column">
           <p class="has-text-centered" style="color: #888;">
-            <span style="color: #000;">SMM </span><span style="color: #0f1a81;"><b>Success</b></span>
+            <span style="color: #000;">SMM-RIP </span><span style="color: #0f1a81;"><b>Success</b></span>
           </p>
           <div style="text-align: center;">
-          <img src="../static/video/rip/real_world/place_cube/SMM.gif" alt="SMM" style="width: 66%; background: #222;">
+          <img src="../static/video/rip/real_world/place_cube/SMM.gif" alt="SMM-RIP" style="width: 66%; background: #222;">
           </div>
         </div>
         <div class="column">
           <p class="has-text-centered" style="color: #888;">
-            <span style="color: #000;">SMM </span><span style="color: #0f1a81;"><b>Success</b></span>
+            <span style="color: #000;">SMM-RIP </span><span style="color: #0f1a81;"><b>Success</b></span>
           </p>
           <div style="text-align: center;">
-            <img src="../static/video/rip/real_world/place_cube/SMM_2.gif" alt="SMM" style="width: 66%; background: #222;">
+            <img src="../static/video/rip/real_world/place_cube/SMM_2.gif" alt="SMM-RIP" style="width: 66%; background: #222;">
           </div>
         </div>
       </div>
@@ -963,7 +966,7 @@
     <h2 class="title">RIP Design Analysis</h2>
     <div class="content has-text-justified">
       <p>
-        To evaluate the contribution of each design component in the SMM-RIP, a quantitative analysis was conducted on four factors: the number of queries (<i>Q</i>), degrees of freedom (&nu;), number of mixture components (<i>M</i>), and the effect of applying SNN regression after SMM.
+        To evaluate the contribution of each design component in the SMM-RIP, a quantitative analysis was conducted on four factors: the number of queries (<i>Q</i>), degrees of freedom (&nu;), number of mixture components (<i>M</i>), and the effect of applying SNN-RIP regression after SMM.
       </p>
     </div>
     <div class="content">
