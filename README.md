@@ -31,11 +31,13 @@ assets/
 └── projects/   # Images, videos, and documents owned by each project
 ```
 
-Use root-relative URLs in HTML, for example:
+Use paths relative to each HTML file so pages also work when opened directly
+with a `file://` URL. Root pages use `assets/...`, while pages inside `research/`
+or `blog/` use `../assets/...`:
 
 ```html
-<link rel="stylesheet" href="/assets/shared/css/bulma.min.css">
-<img src="/assets/projects/sart/images/overview-v2.png" alt="SART overview">
+<link rel="stylesheet" href="../assets/shared/css/bulma.min.css">
+<img src="../assets/projects/sart/images/overview-v2.png" alt="SART overview">
 ```
 
 ## Deployment
